@@ -73,7 +73,7 @@ const BgImage = styled.div`
 // streaming platform logo container
 const StreamingLogoContent=styled.div`
 
-    max-width:650px;
+    max-width:500px;
     width:100%;
     display:flex;
     flex-direction:column;
@@ -101,7 +101,7 @@ const StreamingLogoContent=styled.div`
 // streaming logo styling inside the streaming platform contianer
 const StreamingLogo = styled.img`
     margin-bottom:12px;
-    max-width:600px;
+    max-width:500px;
     min-height:1px;
     display:block;
     width:100%;
