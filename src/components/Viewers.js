@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// showing the the five videos to the user
 const Viewers = (props) => {
   return (
     <Container>
@@ -40,6 +41,9 @@ const Viewers = (props) => {
   );
 };
 
+// styling component
+
+// styling the container
 const Container = styled.div`
   margin-top: 30px;
   padding: 30px 0px 26px;
@@ -53,6 +57,7 @@ const Container = styled.div`
   }
 `;
 
+// styling the inner div
 const Wrap = styled.div`
   padding-top: 56.25%;
   border-radius: 10px;
@@ -77,6 +82,7 @@ const Wrap = styled.div`
     top: 0;
   }
 
+  // styling the video
   video {
     width: 100%;
     height: 100%;

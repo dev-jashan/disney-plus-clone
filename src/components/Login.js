@@ -4,30 +4,33 @@ import styled from "styled-components";
 
 /** importing all the components */
 
-
-
-// The JSX 
+// The JSX
 
 const Login = (props) => {
   return (
     <Container>
       <Content>
         <StreamingLogoContent>
-            <StreamingLogo src="/images/cta-logo-one.svg" alt="streaming platforms"></StreamingLogo>
-            <SignUp>GET ALL THERE</SignUp>
-            <Description>
-                Get Premier Access to Raya and the Last Dragon for an additional fee
-                with a Disney+ subscription. As of 03/26/21, the price of Disney+
-                and The Disney Bundle will increase by $1.
+          <StreamingLogo
+            src="/images/cta-logo-one.svg"
+            alt="streaming platforms"
+          ></StreamingLogo>
+          <SignUp>GET ALL THERE</SignUp>
+          <Description>
+            Get Premier Access to Raya and the Last Dragon for an additional fee
+            with a Disney+ subscription. As of 03/26/21, the price of Disney+
+            and The Disney Bundle will increase by $1.
           </Description>
-          <StreamingLogoTwo src="/images/cta-logo-two.png" alt="streaming platforms"></StreamingLogoTwo>
+          <StreamingLogoTwo
+            src="/images/cta-logo-two.png"
+            alt="streaming platforms"
+          ></StreamingLogoTwo>
         </StreamingLogoContent>
         <BgImage></BgImage>
       </Content>
     </Container>
   );
 };
-
 
 /** style components */
 
@@ -40,8 +43,7 @@ const Container = styled.section`
   height: 100vh;
 `;
 
-
-// the inner container 
+// the inner container
 const Content = styled.div`
   margin-bottom: 10vh;
   width: 100%;
@@ -71,13 +73,12 @@ const BgImage = styled.div`
 `;
 
 // streaming platform logo container
-const StreamingLogoContent=styled.div`
-
-    max-width:500px;
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    /* margin-bottom:2vw;
+const StreamingLogoContent = styled.div`
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom:2vw;
     max-width:650px;
     flex-wrap:wrap;
     display:flex;
@@ -91,61 +92,51 @@ const StreamingLogoContent=styled.div`
     transition-timing-function:ease-out;
     transition:opacity 0.2s;
     width:100%; */
-    
-
-
 `;
-
-
 
 // streaming logo styling inside the streaming platform contianer
 const StreamingLogo = styled.img`
-    margin-bottom:12px;
-    max-width:500px;
-    min-height:1px;
-    display:block;
-    width:100%;
+  margin-bottom: 12px;
+  max-width: 500px;
+  min-height: 1px;
+  display: block;
+  width: 100%;
 `;
 
-
 // for the sign up button
-const SignUp=styled.a`
-    font-weight:bold;
-    color:white;
-    background-color: #0d00ff;
-    margin-bottom:12px;
-    width:100%;
-    letter-spacing:1.5px;
-    font-size:18px;
-    padding:16.5px 0;
-    border: 1px solid transparent;
-    border-radius: 4px;
+const SignUp = styled.a`
+  font-weight: bold;
+  color: white;
+  background-color: #0d00ff;
+  margin-bottom: 12px;
+  width: 100%;
+  letter-spacing: 1.5px;
+  font-size: 18px;
+  padding: 16.5px 0;
+  border: 1px solid transparent;
+  border-radius: 4px;
 
-    &:hover{
-
-        background-color:#0483ee;
-    }
-
-
+  &:hover {
+    background-color: #0483ee;
+  }
 `;
 
 // styling the written content
 
 const Description = styled.p`
-    color: hsla(0,0%,95%,1);
-    font-size:11px;
-    margin:0  0 24px;
-    line-height: 1.5;
-    letter-spacing:1.5px;
+  color: hsla(0, 0%, 95%, 1);
+  font-size: 11px;
+  margin: 0 0 24px;
+  line-height: 1.5;
+  letter-spacing: 1.5px;
 `;
-
 
 //styling the last streaming logos
 
 const StreamingLogoTwo = styled.img`
-    max-width:600px;
-    margin-bottom:20%;
-    display:inline-block;
-    width:100%;
-`
+  max-width: 600px;
+  margin-bottom: 20%;
+  display: inline-block;
+  width: 100%;
+`;
 export default Login;

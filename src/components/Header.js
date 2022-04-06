@@ -28,36 +28,35 @@ const Header = (props) => {
     auth.onAuthStateChanged(async (user) => {
       if (user) {
         setUser(user);
-        navigation("/home",{replace:true});
+        navigation("/home", { replace: true });
       }
     });
   }, [userName]);
-    
-  const handelAuth = () => {
-        if(!userName){
-            auth
-            .signInWithPopup(provider)
-            .then((result) => {
-                setUser(result.user);
-            })
-            .catch((error) => {
-                console.log(error);
-            });
-        }else if(userName){
-            auth.signOut().then(()=>{
-                dispatch(setSignOutState())
-                navigation("/",{replace:true});
-            }).catch((err)=>{
-                alert(err.message);
-            })
-                
-            
-        }
 
+  const handelAuth = () => {
+    if (!userName) {
+      auth
+        .signInWithPopup(provider)
+        .then((result) => {
+          setUser(result.user);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    } else if (userName) {
+      auth
+        .signOut()
+        .then(() => {
+          dispatch(setSignOutState());
+          navigation("/", { replace: true });
+        })
+        .catch((err) => {
+          alert(err.message);
+        });
+    }
   };
 
   const setUser = (user) => {
-     
     dispatch(
       setUserLoginDetails({
         name: user.displayName,
@@ -72,7 +71,9 @@ const Header = (props) => {
       <Logo>
         <img src="/images/logo.svg" alt="disney logo"></img>
       </Logo>
-      {!userName ? (<Login onClick={handelAuth}>Login</Login>) :( 
+      {!userName ? (
+        <Login onClick={handelAuth}>Login</Login>
+      ) : (
         <>
           <NavMenu>
             <a href="/home">
@@ -101,12 +102,11 @@ const Header = (props) => {
             </a>
           </NavMenu>
           <SignOut>
-              <UserImg src={userPhoto} alt={userName}/>
-              <DropDown>
-                  <span onClick={handelAuth}>Sign out </span>
-              </DropDown>
+            <UserImg src={userPhoto} />
+            <DropDown>
+              <span onClick={handelAuth}>Sign out </span>
+            </DropDown>
           </SignOut>
-          
         </>
       )}
     </Nav>
@@ -208,9 +208,9 @@ const NavMenu = styled.div`
     }
   }
 
-  /* @media (max-width: 768px) {
+  @media (max-width: 768px) {
     display: none;
-  } */
+  }
 `;
 
 // styling the login button
@@ -229,7 +229,6 @@ const Login = styled.a`
     border-color: transparent;
   }
 `;
-
 
 // styling the user profile logo
 
@@ -252,7 +251,6 @@ const DropDown = styled.div`
   width: 100px;
   opacity: 0;
 `;
-
 
 // sign out styling
 

@@ -1,29 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState ={
-    recommend:null,
-    newDisney:null,
-    original:null,
-    trending:null,
-}
+// this is the initail store looks like
+const initialState = {
+  recommend: null,
+  newDisney: null,
+  original: null,
+  trending: null,
+};
 
-
-const movieSlice=createSlice({
-    name:'movie',
-    initialState,
-    reducers:{
-        setMovie:(state,action)=>{
-            state.recommend=action.payload.recommend;
-            state.newDisney=action.payload.newDisney;
-            state.original=action.payload.original;
-            state.trending=action.payload.trending;
-        }
-    }
-
+// creating movie slice redux
+const movieSlice = createSlice({
+  name: "movie",
+  initialState,
+  reducers: {
+    setMovie: (state, action) => {
+      state.recommend = action.payload.recommend;
+      state.newDisney = action.payload.newDisney;
+      state.original = action.payload.original;
+      state.trending = action.payload.trending;
+    },
+  },
 });
 
+// exporting the methods to be used by other component
 
-export const {setMovie} = movieSlice.actions;
+export const { setMovie } = movieSlice.actions;
 
 export const selectRecommend = (state) => state.movie.recommend;
 export const selectNewDisney = (state) => state.movie.newDisney;
